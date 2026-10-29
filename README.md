@@ -89,7 +89,7 @@ Per-project licences, statuses and constraints are in [`reference/stack.md`](ref
 | [`docs/03-workloads.md`](docs/03-workloads.md) | isolation levels, `workerd`, containers, microVMs, placement |
 | [`docs/04-storage.md`](docs/04-storage.md) | storage as an S3 endpoint, conditional writes, bucket layout, durability |
 | [`docs/05-control-plane.md`](docs/05-control-plane.md) | the Worker, D1 schema, reconcile loop, API, `NodeDO`, connectivity, auth |
-| [`docs/06-security.md`](docs/06-security.md) | trust boundaries, blast radius, threats and controls, insecure defaults |
+| [`docs/06-security.md`](docs/06-security.md) | trust boundaries, scope of impact, risk register, insecure defaults |
 | [`docs/07-operations.md`](docs/07-operations.md) | install, upgrade, backup, restore, out-of-band access, monitoring |
 | [`docs/08-orchestration.md`](docs/08-orchestration.md) | the cell lease model for a self-hosted celld fleet |
 | [`docs/09-cost.md`](docs/09-cost.md) | unit costs, break-even, labour sensitivity |

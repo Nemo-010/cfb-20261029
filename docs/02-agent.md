@@ -135,9 +135,9 @@ control plane the agent keeps reconciling against its last known desired state.
 
 Declared at enrolment, disableable locally, and checked on both ends: the control plane
 refuses to call one it has not seen declared, and the agent refuses one that local policy
-removed. A compromised control plane cannot grant a node a capability the node does not have.
-It can use every capability the node does declare, so the declaration states how far the node
-trusts the control plane, not whether it trusts it.
+removed. A control plane that has lost integrity cannot grant a node a capability the node
+does not have. It can use every capability the node does declare, so the declaration states
+how far the node trusts the control plane, not whether it trusts it.
 
 | Capability | Operations | Requires | Privilege |
 |---|---|---|---|

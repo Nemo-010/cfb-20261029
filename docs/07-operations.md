@@ -21,8 +21,8 @@ already created. The script:
 
 The script itself is fetched and verified before it runs, never piped straight into an
 interpreter, and it is served from a release origin rather than from the Worker that serves the
-dashboard: a script that writes the node's policy must not come from the origin the policy is
-defending against. `install.sh` writes `control_url`, `node_id`, `token_file`, `state_dir` and
+dashboard: a script that writes the node's policy must not come from the origin whose reach that
+policy bounds. `install.sh` writes `control_url`, `node_id`, `token_file`, `state_dir` and
 `storage_url`; the `capabilities` block comes from a policy file the operator places on the
 host, and the agent refuses to start if its signature does not verify.
 

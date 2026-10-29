@@ -9,7 +9,8 @@ A payload runs at one of three isolation levels, chosen by the provenance of the
 | microVM | Firecracker | separate guest kernel under the jailer | ~125 ms | code the platform did not write |
 
 **Rule: anything not written in-house runs in a microVM.** A CI job that runs `npm install`
-executes stranger code, and a container shares the node kernel: a kernel defect is an escape.
+executes stranger code, and a container shares the node kernel, so a kernel defect crosses the
+isolation boundary.
 
 ---
 

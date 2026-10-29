@@ -62,9 +62,9 @@ one is visible rather than silently degraded.
 | Scheduler HA | One control plane per site, to 200 nodes. The data plane keeps running while the control plane is unreachable, and there is no second scheduler to fail over to. |
 | Hosting other organisations' workloads | One operator, one trust domain, one D1. A tenant's code runs in a microVM and a tenant's data sits under a prefix; the control plane is not shared. |
 
-The capability policy is structural: a compromised control plane cannot grant a node a
-capability the node does not have, and an ACL at the edge would authorise the caller rather than
-the operation. The same policy bounds blast radius per node: a compromised agent holds only the
+The capability policy is structural: a control plane that has lost integrity cannot grant a node
+a capability the node does not have, and an edge ACL would authorise the caller rather than the
+operation. The same policy bounds each node: an agent that has lost integrity holds only the
 capabilities it declared, and revoking the node credential ends its access.
 
 Scheduler HA is out because the recovery path does not need it. On reconnect the agent sends a

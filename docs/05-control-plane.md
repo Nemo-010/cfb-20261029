@@ -185,8 +185,8 @@ reaches.
 - Workers VPC is public beta and free while beta (2026-10-29). The fallback — public hostname
   plus Access service token — stays behind a flag, because both can change.
 
-Every VPC call goes through one allowlist function with a static host and port table. A route
-that builds the destination from request input is an SSRF primitive into the site network.
+Every VPC call goes through one allowlist function with a static host and port table. A route that
+builds the destination from request input forwards a request to a destination the caller chose.
 
 ```ts
 const ALLOWED = {
@@ -212,8 +212,8 @@ credentials with a configured lifetime — one year by default — rotated by ha
 window in which the previous secret still validates.
 
 The site's Cloudflare API token is dedicated, with tunnel and DNS permissions split across
-separate tokens, and an audit-log webhook on every mutation. A compromised Worker means
-control-plane takeover of that site; the data plane cannot be keyed from it.
+separate tokens, and an audit-log webhook on every mutation. A Worker running foreign code
+means control of that site's control plane; the data plane cannot be keyed from it.
 
 The Worker holds the control-plane credentials: the Cloudflare API token and the enrolment
 authority. Each agent holds its node credential and storage credential. The browser holds none.
